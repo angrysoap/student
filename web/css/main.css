@@ -1,0 +1,19 @@
+body {
+    background-color: #64e2be;
+    background-image: url("images/white-border.jpg");
+    font-family: YouYuan
+}
+
+#d {
+    padding: 15% 40%;
+}
+
+h1 {
+    font-family: YouYuan;
+    font-weight: bold;
+}
+
+.button{
+    width: 100px;
+    height: 50px;
+}

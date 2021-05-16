@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="default" extends="struts-default">
+        <interceptors>
+            <interceptor name="BookInterceptor" class="Action.BookInterceptor"/>
+        </interceptors>
+
+        <action name="user" class="Action.UserAction" method="login">
+            <result name="success">main.jsp</result>
+            <result name="success1">main1.jsp</result>
+            <result name="error">userLogin.jsp</result>
+            <result name="input">userLogin.jsp</result>
+        </action>
+       <action name="addUser" class="Action.UserAction" method="insertUser">
+           <result name="success">addUser.jsp</result>
+           <result name="error">addUser.jsp</result>
+       </action>
+       <action name="listUser" class="Action.UserAction" method="listUser">
+           <result name="success">listUser.jsp</result>
+           <result name="error">listUser.jsp</result>
+       </action>
+       <action name="list1User" class="Action.UserAction" method="list1User">
+           <result name="success">listUser.jsp</result>
+           <result name="error">listUser.jsp</result>
+       </action>
+        <action name="updateUser" class="Action.UserAction" method="updateUser">
+            <result name="success">updateUser.jsp</result>
+            <result name="error">updateUser.jsp</result>
+        </action>
+        <action name="deleteUser" class="Action.UserAction" method="deleteUser">
+            <result name="success">listUser.jsp</result>
+            <result name="error">listUser.jsp</result>
+        </action>
+
+        <action name="addBook" class="Action.BookAction" method="add">
+            <result name="success">addBook.jsp</result>
+            <result name="error">addBook.jsp</result>
+            <result name="input">addBook.jsp</result>
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="BookInterceptor"/>
+        </action>
+
+        <action name="listBook" class="Action.BookAction" method="list">
+            <result name="success">listBook.jsp</result>
+            <result name="error">main.jsp</result>
+        </action>
+
+        <action name="listBook1" class="Action.BookAction" method="list1">
+            <result name="success">listBook.jsp</result>
+            <result name="error">listBook.jsp</result>
+        </action>
+
+        <action name="updateBook" class="Action.BookAction" method="update">
+            <result name="success">updateBook.jsp</result>
+            <result name="error">updateBook.jsp</result>
+            <result name="input">updateBook.jsp</result>
+
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="BookInterceptor"/>
+        </action>
+        <action name="deleteBook" class="Action.BookAction" method="delete">
+            <result name="success">deleteSuccess.jsp</result>
+            <result name="error">listBook.jsp</result>
+        </action>
+
+        <action name="readBook" class="Action.BookAction" method="read">
+            <result name="success">introBook.jsp</result>
+            <result name="error">listBook.jsp</result>
+        </action>
+
+        <action name="show" class="Action.LendAction" method="list">
+            <result name="success">lendedBook.jsp</result>
+            <result name="error">lendedBook.jsp</result>
+        </action>
+        <action name="returnBook" class="Action.LendAction" method="delete">
+            <result name="success">lendedBook.jsp</result>
+            <result name="error">lendedBook.jsp</result>
+        </action>
+        <action name="find" class="Action.LendAction" method="find">
+            <result name="success">lendBook.jsp</result>
+            <result name="error">lendBook.jsp</result>
+        </action>
+        <action name="find1" class="Action.LendAction" method="find1">
+            <result name="success">lendBook.jsp</result>
+            <result name="error">lendBook.jsp</result>
+        </action>
+        <action name="read" class="Action.LendAction" method="read">
+            <result name="success">introBook.jsp</result>
+            <result name="error">introBook.jsp</result>
+        </action>
+        <action name="lend" class="Action.LendAction" method="lend">
+            <result name="success">lendBook.jsp</result>
+            <result name="error">lendBook.jsp</result>
+        </action>
+    </package>
+</struts>
